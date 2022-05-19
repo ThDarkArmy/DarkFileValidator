@@ -20,7 +20,7 @@ public @interface DarkFileType {
 
     String[] fileType() default {"text", "video", "image", "pdf", "octet-stream", "audio", "application"};
 
-    String message() default "File is not valid";
+    String message() default "{typeValidationMessage}";
 
     Class<?> [] groups() default {};
 

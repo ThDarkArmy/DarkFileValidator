@@ -19,7 +19,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<?> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception){
-        System.out.println("In Method argument not valid exception");
         var error = exception.getBindingResult().getAllErrors()
                 .stream()
                 .map(exc->
@@ -38,6 +37,6 @@ public class GlobalExceptionHandler {
                         new BeanValidationException(Objects.requireNonNull(exc.getCodes())[1] , exc.getDefaultMessage())
                 )
                 .collect(Collectors.toList());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "Binding Error", error));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "Validation Error", error));
     }
 }

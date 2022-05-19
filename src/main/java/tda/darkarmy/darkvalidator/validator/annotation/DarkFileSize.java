@@ -1,7 +1,6 @@
 package tda.darkarmy.darkvalidator.validator.annotation;
 
 import tda.darkarmy.darkvalidator.validator.constraintvalidator.DarkFileSizeValidator;
-import tda.darkarmy.darkvalidator.validator.constraintvalidator.DarkFileTypeValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -21,7 +20,7 @@ public @interface DarkFileSize {
     String min() default "1KB";
     String max() default "1TB";
 
-    String message() default "File size must be in range 100KB to 1000000000KB";
+    String message() default "{sizeValidationMessage}";
 
     Class<?> [] groups() default {};
 

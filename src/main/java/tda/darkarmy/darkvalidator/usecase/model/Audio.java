@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
+import tda.darkarmy.darkvalidator.validator.annotation.DarkFileSize;
 import tda.darkarmy.darkvalidator.validator.annotation.DarkFileType;
 
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class Audio {
     @NotNull
-    @DarkFileType(fileType = {"audio", "audio/mp3"}, message="File must be a valid audio in mp3 or other format")
+    @DarkFileSize(min = "10KB", max = "100KB")
+    @DarkFileType(fileType = {"audio", "audio/mp3"})
     private MultipartFile audioFile;
 }

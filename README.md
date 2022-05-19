@@ -25,13 +25,16 @@ mvn clean install
 |       +-- annotation                      # Package containing validator interfaces
 |           +-- @DarkFileSize               # File size validator interface
 |           +-- @DarkFileType               # File type validator interface
+|       +-- config                          # Package for configurations
+|           +-- ValidatorConfig             # Configuration class for dynamic message configuration
 |       +-- constrainedvalidator            # Package containing contraint validator implementation classes
 |           +-- DarkFileSizeValidator       # Constraint implementation class for DarkFileSize
 |           +-- DarkFileTypeValidator       # Constraint implementation class for DarkFileType
 |   +-- usecase                             # Implemented example or demo of the DarkFileValidator through Rest API with RestControllerAdvice
 |   +-- DarkValidatorApplication.java       # App starting point or main class
 +-- resources 
-|   +-- application.properties              # Configurations files               
+|   +-- application.properties              # Configurations files
+|   +-- messages.properties                 # Message Configurations files                
 ```
 
 ## Run Project

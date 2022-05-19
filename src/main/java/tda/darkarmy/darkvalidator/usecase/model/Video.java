@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 public class Video {
 
     @NotNull
-    //@DarkFileType(fileType = {"video/x-matroska","video/webm", "video/mp4"}, message="File must be a valid video in mp4 or mkv or webm format")
-    @DarkFileSize(min = "10KB", max = "20MB" , message = "Video size must be between 10MB and 100MB")
+    @DarkFileType(fileType = {"video/x-matroska","video/webm", "video/mp4"}, message="File must be a valid video in mp4 or mkv or webm format")
+    @DarkFileSize(min = "10MB", max = "20MB" , message = "Video size must be between 10MB and 20MB")
     private MultipartFile videoFile;
 }
